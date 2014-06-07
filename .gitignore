@@ -5,15 +5,6 @@
 */.idea/workspace.xml
 */.idea/tasks.xml
 
-# Large datasets
-./smart-home-thesis/data/large/*
-
-# Test datasets
-*_test.csv
-
-# Compiled js and CSS files
-./smart-home/thesis/static/js/prod/*
-
 # Latex files
 *.aux
 *.log
