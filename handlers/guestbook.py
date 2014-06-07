@@ -1,17 +1,8 @@
-import os
 import urllib
 
+from base import BaseRequestHandler
 from google.appengine.api import users
 from google.appengine.ext import ndb
-
-import jinja2
-import webapp2
-
-
-JINJA_ENVIRONMENT = jinja2.Environment(
-  loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
-  extensions=['jinja2.ext.autoescape'],
-  autoescape=True)
 
 
 DEFAULT_GUESTBOOK_NAME = 'default_guestbook'
@@ -33,7 +24,7 @@ class Greeting(ndb.Model):
     date = ndb.DateTimeProperty(auto_now_add=True)
 
 
-class GuestbookHandler(webapp2.RequestHandler):
+class GuestbookHandler(BaseRequestHandler):
   def get(self):
     guestbook_name = self.request.get('guestbook_name',
                                           DEFAULT_GUESTBOOK_NAME)
@@ -55,6 +46,4 @@ class GuestbookHandler(webapp2.RequestHandler):
         'url_linktext': url_linktext,
     }
 
-    template = JINJA_ENVIRONMENT.get_template('guestbook.html')
-    self.response.write(template.render(template_values))
-    
+    self.render("guestbook.html", template_values)

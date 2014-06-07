@@ -15,17 +15,12 @@
 # limitations under the License.
 #
 import webapp2
-import guestbook
-import randomstuff
+import handlers
 
-class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('Hello world!')
 
 PUBLIC_HANDLERS = [
-    ('/', MainHandler),
-    ('/guestbook', guestbook.GuestbookHandler),
-    ('/bootstrap', randomstuff.BootstrapHandler)
+    ('/', handlers.home.MainHandler),
+    ('/guestbook', handlers.guestbook.GuestbookHandler),
 ]
 
 public_pages = webapp2.WSGIApplication(PUBLIC_HANDLERS, debug=True)
