@@ -5,4 +5,4 @@ from base import BaseRequestHandler
 
 class MainHandler(BaseRequestHandler):
   def get(self):
-    self.response.write('Hello world!')
+    self.render("home.html")

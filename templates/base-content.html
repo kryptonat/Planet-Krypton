@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>{% block title %}{% endblock title %}</title>
+  {% block scripthead %}{% endblock scripthead %}
+  {% include "stylesheet.html" %}
+</head>
+<body>
+  <div class="container">
+{#    {% include "navbar.html" %}#}
+    <div class="content">
+      {% block content %}{% endblock content %}
+    </div>
+    {% include "footer.html" %}
+  </div>
+  {% include "javascript.html" %}
+  {% block scriptend %}{% endblock scriptend %}
+</body>
+</html>
