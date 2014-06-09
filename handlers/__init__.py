@@ -1,3 +1,2 @@
 import base
-import guestbook
-import home
+import main

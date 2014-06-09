@@ -11,8 +11,9 @@
   {% include "stylesheet.html" %}
 </head>
 <body>
+  {% include "navbar.html" %}
   {% block body %}{% endblock body %}
-  {% include "footer.html" %}
+{#  {% include "footer.html" %}#}
   {% include "javascript.html" %}
   {% block scriptend %}{% endblock scriptend %}
 </body>

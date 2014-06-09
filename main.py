@@ -19,8 +19,9 @@ import handlers
 
 
 PUBLIC_HANDLERS = [
-    ('/', handlers.home.MainHandler),
-    ('/guestbook', handlers.guestbook.GuestbookHandler),
+    ("/", handlers.main.HomepageHandler),
+    ("/about", handlers.main.AboutHandler),
+    ("/contact", handlers.main.ContactHandler),
 ]
 
 public_pages = webapp2.WSGIApplication(PUBLIC_HANDLERS, debug=True)
